@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import ContactItem from '../ContactItem';
-import contactsActions from '../../redux/contacts/contacts-actions';
+import { deleteContact } from '../../redux/contacts/contacts-actions';
 import styles from './ContactList.module.scss';
 
 class ContactList extends Component {
@@ -50,7 +50,7 @@ const mapStateToProps = ({ contacts: { items, filter } }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onDeleteContact: id => dispatch(contactsActions.deleteContact(id)),
+    onDeleteContact: id => dispatch(deleteContact(id)),
   };
 };
 

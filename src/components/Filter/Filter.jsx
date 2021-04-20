@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
-import contactsActions from '../../redux/contacts/contacts-actions';
+import { changeFilter } from '../../redux/contacts/contacts-actions';
 import styles from './Filter.module.scss';
 
 class Filter extends Component {
@@ -43,7 +43,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onChange: e => dispatch(contactsActions.changeFilter(e.currentTarget.value)),
+  onChange: e => dispatch(changeFilter(e.currentTarget.value)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);
